@@ -1,0 +1,6 @@
+In order to speed up the program, it's better to 
+
+- check if file size is equal first
+- then, check first and last range of bytes for equality
+- then, check the file type
+- if all the steps above pass, then compute hash

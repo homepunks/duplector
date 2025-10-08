@@ -1,0 +1,9 @@
+I haven't come up with a better and more creative name yet.
+
+Use:
+	go build
+	./duplicates-detector
+
+It will search for duplicates in the directory set to $HOME,
+so if you don't have it set, it's not going to execute
+properly. I will work on that later.
