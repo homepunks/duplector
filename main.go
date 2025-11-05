@@ -16,7 +16,9 @@ func main() {
 		fileHash := HashFile(file)
 		if duplicate, found := checker[fileHash]; found {
 			log.Printf("[INFO] A duplicate of %s was found: %s\n", file, duplicate)
+			continue
 		}
+		
 		checker[fileHash] = file
 	}
 

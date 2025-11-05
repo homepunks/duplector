@@ -4,3 +4,4 @@ In order to speed up the program, it's better to
 - then, check first and last range of bytes for equality
 - then, check the file type
 - if all the steps above pass, then compute hash
+- [DONE] switch to BLAKE3 from MD5

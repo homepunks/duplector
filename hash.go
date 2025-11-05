@@ -1,13 +1,14 @@
 package main
 
 import (
-	"crypto/md5"
 	"strings"
 	"path/filepath"
 	"io/fs"
 	"io"
 	"os"
 	"fmt"
+
+	"lukechampine.com/blake3"
 )
 
 func ListFiles(rootDir string) []string {
@@ -47,16 +48,17 @@ func ListFiles(rootDir string) []string {
 
 func HashFile(filePath string) string {
 	f, err := os.Open(filePath)
-	if err != nil {
-		fmt.Printf("[ERROR] Could not open file %s: %v\n", filePath, err)
-		os.Exit(69)
-	}
-	defer f.Close()
+ 	if err	!= nil {
+ 		fmt.Printf("[ERROR] Could not open file %s: %v\n", filePath, err)
+ 		os.Exit(69)
+ 	}
+ 	defer f.Close()	
 
-	hash := md5.New()
+	hash := blake3.New(32, nil)
+	
 	if _, err := io.Copy(hash, f); err != nil {
 		fmt.Printf("[ERROR] Could not copy contents of file %s to hash: %v\n", filePath, err)
-		os.Exit(69)
+	 	os.Exit(69)
 	}
 
 	return fmt.Sprintf("%x", hash.Sum(nil))
