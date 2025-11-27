@@ -1,7 +1,7 @@
 In order to speed up the program, it's better to 
 
-- check if file size is equal first
-- then, check first and last range of bytes for equality
-- then, check the file type
-- if all the steps above pass, then compute hash
+- [DONE] check if file size is equal first
+- [DONE] then, check first and last range of bytes for equality
+- [DONE] then, check the file type
+- [DONE] if all the steps above pass, then compute hash
 - [DONE] switch to BLAKE3 from MD5

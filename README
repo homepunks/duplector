@@ -1,7 +1,9 @@
+It will search for duplicates in the directory set to $HOME, so if you 
+don't have it set, it's not going to execute properly. You can set the
+minimum limit filesize by adjusting the minSize in hash.go file.
+
 Use:
 	go build
 	./duplector
 
-It will search for duplicates in the directory set to $HOME,
-so if you don't have it set, it's not going to execute
-properly. I will work on making it more versatile later.
+
